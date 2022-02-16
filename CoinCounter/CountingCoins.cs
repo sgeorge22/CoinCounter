@@ -24,6 +24,19 @@ namespace CoinCounter
             double nickleValue = 5;
 
             double quaterCoin = Math.Floor(userValueNumber / quaterValue);
+            double remainder = userValueNumber % quaterValue;
+
+            double dimeCoin = Math.Floor(remainder / dimeValue);
+            remainder = remainder % dimeValue;
+
+            double nickleCoin = Math.Floor(remainder / nickleValue);
+            remainder = remainder % nickleValue;
+
+            Console.WriteLine($"{userValueNumber} is equalt to \n " +
+                $"Quaters: {quaterCoin} \n" +
+                $"Dimes: {dimeCoin} \n" +
+                $"Nickles: {nickleCoin} \n" +
+                $"Pennies: {remainder}");
         }
     }
 }
